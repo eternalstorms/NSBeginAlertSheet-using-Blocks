@@ -1,6 +1,5 @@
 //
 //  NSApplication+ESSApplicationCategory.h
-//  flickery
 //
 //  Created by Matthias Gansrigler on 01.10.12.
 //  Copyright (c) 2012 Eternal Storms Software. All rights reserved.
