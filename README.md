@@ -5,14 +5,14 @@
 A collection of possibly useful methods and functions.
 
 Currently consisting of:  
-void ESSBeginAlertPanel(...)  
-void ESSBeginInformationalAlertPanel(...)  
-void ESSBeginCriticalAlertPanel(...)  
+void ESSBeginAlertSheet(...)  
+void ESSBeginInformationalAlertSheet(...)  
+void ESSBeginCriticalAlertSheet(...)  
 
-These three functions are basically the same as their NSBegin*AlertPanel(...) counterparts, only that they use blocks for callbacks, not @selectors.  
+These three functions are basically the same as their NSBegin*AlertSheet(...) counterparts, only that they use blocks for callbacks, not @selectors.  
 
-You might notice that the NSBegin*AlertPanel functions are declared in the header of the NSPanel class.
-But since ESSBegin*AlertPanel builds on NSBegin*AlertPanel, it still uses the @selector callbacks to do its stuff which needs an instance of a class, and NSApplication is the perfect place for that, since any cocoa app has an instance of it.
+You might notice that the NSBegin*AlertSheet functions are declared in the header of the NSSheet class.
+But since ESSBegin*AlertSheet builds on NSBegin*AlertSheet, it still uses the @selector callbacks to do its stuff which needs an instance of a class, and NSApplication is the perfect place for that, since any cocoa app has an instance of it.
 
 ## First, the License Agreement
 
