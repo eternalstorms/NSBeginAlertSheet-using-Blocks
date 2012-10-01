@@ -4,16 +4,12 @@
 
 A collection of possibly useful methods and functions.
 
-Currently consisting of:
+Currently consisting of:  
+void ESSBeginAlertPanel(...)  
+void ESSBeginInformationalAlertPanel(...)  
+void ESSBeginCriticalAlertPanel(...)  
 
-void ESSBeginAlertPanel(...)
-
-void ESSBeginInformationalAlertPanel(...)
-
-void ESSBeginCriticalAlertPanel(...)
-
-
-These three functions are basically the same as their NSBegin*AlertPanel(...) counterparts, only that they use blocks for callbacks, not @selectors.
+These three functions are basically the same as their NSBegin*AlertPanel(...) counterparts, only that they use blocks for callbacks, not @selectors.  
 
 You might notice that the NSBegin*AlertPanel functions are declared in the header of the NSPanel class.
 But since ESSBegin*AlertPanel builds on NSBegin*AlertPanel, it still uses the @selector callbacks to do its stuff which needs an instance of a class, and NSApplication is the perfect place for that, since any cocoa app has an instance of it.
@@ -27,8 +23,7 @@ But since ESSBegin*AlertPanel builds on NSBegin*AlertPanel, it still uses the @s
 5) In all cases, you must include a credit mentioning Matthias Gansrigler as the original author of the source.  
 6) I’m not liable for anything you do with the code, no matter what. So be sensible.  
 7) You can’t use my name or other marks to promote your products based on the code.  
-8) This framework uses the OAuthConsumer framework code which you can separately download from http://code.google.com/p/oauthconsumer/ which is made available under the MIT License.  
-9) If you agree to all of that, go ahead and download the source. Otherwise, don’t.
+8) If you agree to all of that, go ahead and download the source. Otherwise, don’t.
 
 # How To use NSApplication+ESSApplicationCategory
 
@@ -37,12 +32,11 @@ Just #import "NSApplication+ESSApplicationCategory.h" in your project and start 
 Note on the NSString *formattedString argument - unlike the NSBegin*AlertSheet function, ESSBegin*AlertSheet function does not format the string for you, so instead of passing a string like @"This operation took %lld minutes", please pass a string that already is already formatted, as in [NSString stringWithFormat:@"This operation took %lld minutes",5]
 
 ## Requirements
-This code works on OS X Snow Leopard and later (tested only on OS X Mountain Lion)
-
+This code works on OS X Snow Leopard and later (tested only on OS X Mountain Lion)  
 Developed with Xcode 4.5
 
 ## Support
-The framework and code is provided as-is, but if you need help or have suggestions, you can contact me anytime at [opensource@eternalstorms.at](mailto:opensource@eternalstorms.at) or [@eternalstorms on twitter](http://twitter.com/eternalstorms)
+The code is provided as-is, but if you need help or have suggestions, you can contact me anytime at [opensource@eternalstorms.at](mailto:opensource@eternalstorms.at) or [@eternalstorms on twitter](http://twitter.com/eternalstorms)
 
 For other Open Source projects of mine, please visit http://www.eternalstorms.at/opensource
 
