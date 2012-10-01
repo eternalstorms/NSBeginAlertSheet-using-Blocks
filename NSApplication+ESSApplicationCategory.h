@@ -21,7 +21,7 @@ void ESSBeginAlertSheet(NSString *title,
 						void *contextInfo,
 						NSString *formattedString);
 
-void ESSInformationalBeginAlertSheet(NSString *title,
+void ESSBeginInformationalAlertSheet(NSString *title,
 									 NSString *defaultButton,
 									 NSString *alternateButton,
 									 NSString *otherButton,
@@ -33,7 +33,7 @@ void ESSInformationalBeginAlertSheet(NSString *title,
 									 void *contextInfo,
 									 NSString *formattedString);
 
-void ESSCriticalBeginAlertSheet(NSString *title,
+void ESSBeginCriticalAlertSheet(NSString *title,
 								NSString *defaultButton,
 								NSString *alternateButton,
 								NSString *otherButton,
