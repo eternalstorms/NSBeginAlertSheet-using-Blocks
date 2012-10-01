@@ -5,9 +5,13 @@
 A collection of possibly useful methods and functions.
 
 Currently consisting of:
+
 void ESSBeginAlertPanel(...)
+
 void ESSBeginInformationalAlertPanel(...)
+
 void ESSBeginCriticalAlertPanel(...)
+
 
 These three functions are basically the same as their NSBegin*AlertPanel(...) counterparts, only that they use blocks for callbacks, not @selectors.
 
@@ -32,6 +36,7 @@ Just #import "NSApplication+ESSApplicationCategory.h" in your project and start 
 
 ## Requirements
 This code works on OS X Snow Leopard and later (tested only on OS X Mountain Lion)
+
 Developed with Xcode 4.5
 
 ## Support
