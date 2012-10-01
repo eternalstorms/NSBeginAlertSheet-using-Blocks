@@ -78,10 +78,10 @@ void ESSBeginCriticalAlertSheet(NSString *title,
 - (void)_esswin:(NSPanel *)panel didEndWithCode:(NSInteger)code context:(void *)context
 {
 	NSDictionary *dict = (NSDictionary *)context;
-	void (^didDismissBlock)(void *contextInf, NSInteger returnCode) = [dict objectForKey:@"didEndBlock"];
+	void (^didEndBlock)(void *contextInf, NSInteger returnCode) = [dict objectForKey:@"didEndBlock"];
 	void *contextInf = [dict objectForKey:@"contextInfo"];
 	
-	didDismissBlock(contextInf,code);
+	didEndBlock(contextInf,code);
 }
 
 - (void)_esswin:(NSPanel *)panel didDismissWithCode:(NSInteger)code context:(void *)context
