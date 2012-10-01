@@ -34,6 +34,8 @@ But since ESSBegin*AlertPanel builds on NSBegin*AlertPanel, it still uses the @s
 
 Just #import "NSApplication+ESSApplicationCategory.h" in your project and start using it :)
 
+Note on the NSString *formattedString argument - unlike the NSBegin*AlertSheet function, ESSBegin*AlertSheet function does not format the string for you, so instead of passing a string like @"This operation took %lld minutes", please pass a string that already is already formatted, as in [NSString stringWithFormat:@"This operation took %lld minutes",5]
+
 ## Requirements
 This code works on OS X Snow Leopard and later (tested only on OS X Mountain Lion)
 
