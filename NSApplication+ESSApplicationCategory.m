@@ -32,16 +32,16 @@ void ESSBeginAlertSheet(NSString *title,
 }
 
 void ESSBeginInformationalAlertSheet(NSString *title,
-								NSString *defaultButton,
-								NSString *alternateButton,
-								NSString *otherButton,
-								NSWindow *window,
-								void (^didEndBlock)(void *contextInf,
-													NSInteger returnCode),
-								void (^didDismissBlock)(void *contextInf,
-														NSInteger returnCode),
-								void *contextInfo,
-								NSString *formattedString)
+									 NSString *defaultButton,
+									 NSString *alternateButton,
+									 NSString *otherButton,
+									 NSWindow *window,
+									 void (^didEndBlock)(void *contextInf,
+														 NSInteger returnCode),
+									 void (^didDismissBlock)(void *contextInf,
+															 NSInteger returnCode),
+									 void *contextInfo,
+									 NSString *formattedString)
 {
 	NSMutableDictionary *contextInf = [NSMutableDictionary dictionary];
 	if (didEndBlock != nil)
@@ -81,7 +81,8 @@ void ESSBeginCriticalAlertSheet(NSString *title,
 	void (^didEndBlock)(void *contextInf, NSInteger returnCode) = [dict objectForKey:@"didEndBlock"];
 	void *contextInf = [dict objectForKey:@"contextInfo"];
 	
-	didEndBlock(contextInf,code);
+	if (didEndBlock != nil)
+		didEndBlock(contextInf,code);
 }
 
 - (void)_esswin:(NSPanel *)panel didDismissWithCode:(NSInteger)code context:(void *)context
@@ -90,7 +91,8 @@ void ESSBeginCriticalAlertSheet(NSString *title,
 	void (^didDismissBlock)(void *contextInf, NSInteger returnCode) = [dict objectForKey:@"didDismissBlock"];
 	void *contextInf = [dict objectForKey:@"contextInfo"];
 	
-	didDismissBlock(contextInf,code);
+	if (didDismissBlock != nil)
+		didDismissBlock(contextInf,code);
 	[dict autorelease];
 }
 
