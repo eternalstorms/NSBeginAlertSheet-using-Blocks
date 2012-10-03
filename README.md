@@ -12,7 +12,7 @@ Currently consisting of:
 
 These three functions are basically the same as their `NSBegin*AlertSheet(...)` counterparts, only that they use blocks for callbacks, not `@selectors`.  
 
-You might notice that the NSBegin*AlertSheet functions are declared in the header of the NSPanel class.
+You might notice that the `NSBegin*AlertSheet` functions are declared in the header of the NSPanel class.
 But since `ESSBegin*AlertSheet` builds on `NSBegin*AlertSheet`, it still uses the `@selector` callbacks to do its stuff which needs an instance of a class, and `NSApplication` is the perfect place for that, since any Cocoa app has an instance of it.
 
 ## First, the License Agreement
@@ -30,7 +30,7 @@ But since `ESSBegin*AlertSheet` builds on `NSBegin*AlertSheet`, it still uses th
 
 Just `#import "NSApplication+ESSApplicationCategory.h"` in your project and start using it :)
 
-Note on the `NSString *formattedString` argument - unlike the `NSBegin*AlertSheet` function, `ESSBegin*AlertSheet` function does not format the string for you, so instead of passing a string like `@"This operation took %ld minutes"`, please pass a string that already is already formatted, as in `[NSString stringWithFormat:@"This operation took %ld minutes",5]`.
+Note on the `NSString *formattedString` argument - unlike the `NSBegin*AlertSheet` function, `ESSBegin*AlertSheet` function does not format the string for you, so instead of passing a string like `@"This operation took %ld minutes"`, please pass a string that already is formatted, as in `[NSString stringWithFormat:@"This operation took %ld minutes",5]`.
 
 ###Example Usage
 
