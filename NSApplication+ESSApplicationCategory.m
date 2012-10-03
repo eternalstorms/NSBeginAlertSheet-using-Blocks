@@ -21,14 +21,14 @@ void ESSBeginAlertSheet(NSString *title,
 						void *contextInfo,
 						NSString *formattedString)
 {
-	NSMutableDictionary *contextInf = [[NSMutableDictionary dictionary] retain];
+	NSMutableDictionary *contextInf = [NSMutableDictionary dictionary];
 	if (didEndBlock != nil)
 		[contextInf setObject:[[didEndBlock copy] autorelease] forKey:@"didEndBlock"];
 	if (didDismissBlock != nil)
 		[contextInf setObject:[[didDismissBlock copy] autorelease] forKey:@"didDismissBlock"];
 	if (contextInfo != nil)
 		[contextInf setObject:contextInfo forKey:@"contextInfo"];
-	NSBeginAlertSheet(title, defaultButton, alternateButton, otherButton, window, NSApp, @selector(_esswin:didEndWithCode:context:), @selector(_esswin:didDismissWithCode:context:), contextInf, formattedString,nil);
+	NSBeginAlertSheet(title, defaultButton, alternateButton, otherButton, window, NSApp, @selector(_esswin:didEndWithCode:context:), @selector(_esswin:didDismissWithCode:context:), [contextInf retain], formattedString,nil);
 }
 
 void ESSBeginInformationalAlertSheet(NSString *title,
