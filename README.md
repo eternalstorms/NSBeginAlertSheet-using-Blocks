@@ -44,7 +44,7 @@ Note on the NSString *formattedString argument - unlike the NSBegin*AlertSheet f
 	^(void *context, NSInteger returnCode){
 		NSLog(@"did dismiss: %@, code: %ld",context,returnCode);
 	},
-	[NSDictionary dictionaryWithObject:@"cool" forKey:@"contextInfo"],
+	[NSDictionary dictionaryWithObject:@"Some context info" forKey:@"in a dictionary"],
 	[NSString stringWithFormat:@"Our message: %ld",5]);
 
 ## Requirements
