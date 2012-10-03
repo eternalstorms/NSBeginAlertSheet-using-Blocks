@@ -5,9 +5,9 @@
 A collection of possibly useful methods and functions.
 
 Currently consisting of:  
-void ESSBeginAlertSheet(...)  
-void ESSBeginInformationalAlertSheet(...)  
-void ESSBeginCriticalAlertSheet(...)  
+    void ESSBeginAlertSheet(...)  
+    void ESSBeginInformationalAlertSheet(...)  
+    void ESSBeginCriticalAlertSheet(...)  
 
 These three functions are basically the same as their NSBegin*AlertSheet(...) counterparts, only that they use blocks for callbacks, not @selectors.  
 
@@ -30,6 +30,22 @@ But since ESSBegin*AlertSheet builds on NSBegin*AlertSheet, it still uses the @s
 Just #import "NSApplication+ESSApplicationCategory.h" in your project and start using it :)
 
 Note on the NSString *formattedString argument - unlike the NSBegin*AlertSheet function, ESSBegin*AlertSheet function does not format the string for you, so instead of passing a string like @"This operation took %lld minutes", please pass a string that already is already formatted, as in [NSString stringWithFormat:@"This operation took %lld minutes",5]
+
+###Example Usage
+
+    ESSBeginAlertSheet(@"Title",
+	@"OK",
+	@"Cancel",
+	@"Other",
+	self.window,
+	^(void *context, NSInteger returnCode){
+		NSLog(@"didEnd: %@, code: %ld",context,returnCode);
+	},
+	^(void *context, NSInteger returnCode){
+		NSLog(@"did dismiss: %@, code: %ld",context,returnCode);
+	},
+	nil,
+	[NSString stringWithFormat:@"Our message: %ld",5]);
 
 ## Requirements
 This code works on OS X Snow Leopard and later (tested only on OS X Mountain Lion)  
