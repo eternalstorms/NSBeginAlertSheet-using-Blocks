@@ -4,7 +4,8 @@
 
 A collection of possibly useful methods and functions.
 
-Currently consisting of:  
+Currently consisting of:
+
     void ESSBeginAlertSheet(...)  
     void ESSBeginInformationalAlertSheet(...)  
     void ESSBeginCriticalAlertSheet(...)  
